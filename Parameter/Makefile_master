@@ -1,0 +1,35 @@
+FC = ifort -O2
+F77FLAGS = $(FFLAGS)
+HPROG1 = BBB
+
+DEP1  = globals.o utils.o crystal_bcc.o TaylorPoly.o master.o
+
+progs = $(HPROG1)
+
+all     : $(progs)
+
+$(HPROG1)  : $(DEP1)
+	$(FC) $(FFLAGS) $(DEP1) -o $@
+
+master.o : master.f90
+	$(FC)   -c master.f90
+
+TaylorPoly.o : TaylorPoly.f90
+	$(FC) $(FFLAGS) -c TaylorPoly.f90
+
+crystal_bcc.o : crystal_bcc.f90
+	$(FC) $(FFLAGS) -c crystal_bcc.f90
+
+utils.o : utils.f90
+	$(FC) $(FFLAGS) -c utils.f90
+
+globals.o : globals.f90
+	$(FC) $(FFLAGS) -c globals.f90
+
+.PHONY: clean
+clean:
+	-rm -f *.o *.mod main
+
+.PHONY: clean_sim
+clean_sim:
+	-rm -f file*.dat main
