@@ -8,8 +8,6 @@ import glob
 
 A = [14, 14, 14, 14, 14, 14, 14, 14,14, 14, 14, 14, 14, 14, 14, 14,14, 14, 14, 14, 14, 14, 14, 14,14, 14, 14, 14, 14, 14, 14, 14,14, 14, 14, 14, 14, 14, 14, 14,14, 14, 14, 14, 14, 14, 14, 14,14, 14, 14, 14, 14, 14, 14, 14,14, 14, 14, 14, 14, 14, 14, 14,14, 14, 14, 14, 14, 14, 14, 14,14, 14, 14, 14, 14, 14, 14, 14,14, 14, 14, 14, 14, 14, 14, 14,14, 14, 14, 14, 14, 14, 14, 14]
 len(A)
-#files= ['/Users/sebastiangrorud/matlab/Resultater/0605_cs123/MODE_data/file10009_mode.dat', '/Users/sebastiangrorud/matlab/Resultater/0605_cs123/MODE_data/file10018_mode.dat', '/Users/sebastiangrorud/matlab/Resultater/0605_cs123/MODE_data/file10027_mode.dat' ]
-#files = ['/Users/sebastiangrorud/matlab/Resultater/1805_cs123/MODE_data/file10001_mode.dat','/Users/sebastiangrorud/matlab/Resultater/1805_cs123/MODE_data/file10002_mode.dat','/Users/sebastiangrorud/matlab/Resultater/1805_cs123/MODE_data/file10003_mode.dat']
 path = '/Users/sebastiangrorud/matlab/Resultater/optmal_balanse/Ny mappe med objekter/MODE_data/'
 file = glob.glob(path + '*.dat')
 file = sorted(file)
@@ -86,17 +84,6 @@ for n in range(0,1):
         x = np.arange(len(Y))  # the label locations
         width = 0.8  # the width of the bars
         
-        # fig, ax = plt.subplots()
-        # fig.suptitle('Activated slip mode at $\epsilon_{vm}$=20 deformation', ha="center",rasterized=True)
-        # rects1 = ax.bar(x - width/3, x_1, width/3, label='n=20', edgecolor='grey', color=[(0.86, 0.3712, 0.33999999999999997)], rasterized=True, hatch='+')
-        # rects2 = ax.bar(x, x_2, width/3, label='n=50', edgecolor='grey', color='khaki', hatch=['x'])
-        # rects3 = ax.bar(x + width/3, x_3, width/3, label='n=1000', edgecolor='grey', color=[(0.6423044349219739, 0.5497680051256467, 0.9582651433656727)],rasterized=True, hatch='.')
-        # fig, ax = plt.subplots()
-        # fig.suptitle('Activated slip mode at $\epsilon_{vm}$=20 deformation', ha="center",rasterized=True)
-        # rects1 = ax.bar(x - width/3, x_1, width/3, label='n=20', edgecolor='black', color='silver', rasterized=True, hatch='+')
-        # rects2 = ax.bar(x, x_2, width/3, label='n=50', edgecolor='black', color='gray', hatch='x')
-        # rects3 = ax.bar(x + width/3, x_3, width/3, label='n=1000', edgecolor='black', color='gainsboro',rasterized=True, hatch='.')
-        
         fig, ax = plt.subplots()
         #fig.suptitle('Activated slip mode at $\epsilon_{vm}=20$ deformation', ha="center",rasterized=True)
         rects1 = ax.bar(x - width/3, x_1, width/3, label=r'$n=20$', edgecolor='grey', color=[(0.4, 0.7607843137254902, 0.6470588235294118)], rasterized=True)
@@ -117,26 +104,4 @@ for n in range(0,1):
         name = 'mode_50_'+str(ii)
         #plt.savefig(name+'.eps', format='eps')
         
-        #(0.86, 0.7612000000000001, 0.33999999999999997)]
-        
-        # =============================================================================
-        # set_n = []
-        # 
-        # dfs = pd.DataFrame(data={'mode': Y, 
-        #                          'n=20': [x_1[0], x_1[1], x_1[2]], 
-        #                          'n=50': [x_2[0], x_2[1], x_2[2]], 
-        #                          'n=1000': [x_3[0], x_3[1], x_3[2]]})
-        # dfs1 = pd.melt(dfs, id_vars = "mode")
-        # print(dfs1)
-        # 
-        # plt.figure(dpi=1200)
-        # ax = sns.catplot(x = 'mode', y='value', hue = 'variable',data=dfs1, kind='bar', palette='Set2',  rasterized=True)
-        # ax.set(xlabel='Slip mode', ylabel = 'Relative amount of shear by each slip mode')
-        # ax.legend(title="Yield Surface exponent");
-        # plt.savefig('MODE_activty.eps', format='eps')
-        # plt.show()
-        # 
-        # =============================================================================
-        
-        #plt.show()
-        #exit()
+     
