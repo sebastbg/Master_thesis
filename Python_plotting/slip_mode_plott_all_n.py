@@ -7,9 +7,6 @@ import glob
 
 
 A = [14, 14, 14, 14, 14, 14, 14, 14,14, 14, 14, 14, 14, 14, 14, 14,14, 14, 14, 14, 14, 14, 14, 14,14, 14, 14, 14, 14, 14, 14, 14,14, 14, 14, 14, 14, 14, 14, 14,14, 14, 14, 14, 14, 14, 14, 14,14, 14, 14, 14, 14, 14, 14, 14,14, 14, 14, 14, 14, 14, 14, 14,14, 14, 14, 14, 14, 14, 14, 14,14, 14, 14, 14, 14, 14, 14, 14,14, 14, 14, 14, 14, 14, 14, 14,14, 14, 14, 14, 14, 14, 14, 14]
-len(A)
-#files= ['/Users/sebastiangrorud/matlab/Resultater/0605_cs123/MODE_data/file10009_mode.dat', '/Users/sebastiangrorud/matlab/Resultater/0605_cs123/MODE_data/file10018_mode.dat', '/Users/sebastiangrorud/matlab/Resultater/0605_cs123/MODE_data/file10027_mode.dat' ]
-#files = ['/Users/sebastiangrorud/matlab/Resultater/1805_cs123/MODE_data/file10001_mode.dat','/Users/sebastiangrorud/matlab/Resultater/1805_cs123/MODE_data/file10002_mode.dat','/Users/sebastiangrorud/matlab/Resultater/1805_cs123/MODE_data/file10003_mode.dat']
 path = '/Users/sebastiangrorud/matlab/Resultater/fiber_data/def90/MODE_data/'
 file = glob.glob(path + '*.dat')
 file = sorted(file)
@@ -99,18 +96,6 @@ for n in range(0,1):
         x = np.arange(len(Y))  # the label locations
         width = 0.8  # the width of the bars
         
-        # fig, ax = plt.subplots()
-        # fig.suptitle('Activated slip mode at $\epsilon_{vm}$=20 deformation', ha="center",rasterized=True)
-        # rects1 = ax.bar(x - width/3, x_1, width/3, label='n=20', edgecolor='grey', color=[(0.86, 0.3712, 0.33999999999999997)], rasterized=True, hatch='+')
-        # rects2 = ax.bar(x, x_2, width/3, label='n=50', edgecolor='grey', color='khaki', hatch=['x'])
-        # rects3 = ax.bar(x + width/3, x_3, width/3, label='n=1000', edgecolor='grey', color=[(0.6423044349219739, 0.5497680051256467, 0.9582651433656727)],rasterized=True, hatch='.')
-        # fig, ax = plt.subplots()
-        # fig.suptitle('Activated slip mode at $\epsilon_{vm}$=20 deformation', ha="center",rasterized=True)
-        # rects1 = ax.bar(x - width/3, x_1, width/3, label='n=20', edgecolor='black', color='silver', rasterized=True, hatch='+')
-        # rects2 = ax.bar(x, x_2, width/3, label='n=50', edgecolor='black', color='gray', hatch='x')
-        # rects3 = ax.bar(x + width/3, x_3, width/3, label='n=1000', edgecolor='black', color='gainsboro',rasterized=True, hatch='.')
-        
-# =============================================================================
         fig, ax = plt.subplots()
          #fig.suptitle('Activated slip mode at $\epsilon_{vm}=20$ deformation', ha="center",rasterized=True)
         rects1 = ax.bar(x - width/2.5, x_1, width/5, label=r'$n=5$', edgecolor='grey', color= [(0.8980392156862745, 0.7686274509803922, 0.5803921568627451)], rasterized=True)
@@ -118,18 +103,6 @@ for n in range(0,1):
         rects3 = ax.bar(x, x_3, width/5, label=r'$n=50$', edgecolor='grey', color=[(0.9882352941176471, 0.5529411764705883, 0.3843137254901961)])
         rects4 = ax.bar(x + width/5, x_4, width/5, label=r'$n=100$', edgecolor='grey', color=[(0.5529411764705883, 0.6274509803921569, 0.796078431372549)],rasterized=True)
         rects5 = ax.bar(x + width/2.5, x_5, width/5, label=r'$n=1000$', edgecolor='grey', color= [(0.7019607843137254, 0.7019607843137254, 0.7019607843137254)], rasterized=True)
-#         
-# =============================================================================
-# =============================================================================
-#         fig, ax = plt.subplots()
-#         #fig.suptitle('Activated slip mode at $\epsilon_{vm}=20$ deformation', ha="center",rasterized=True)
-#         rects1 = ax.bar(x - width/2.5, x_1, width/5, label=r'$n=5$', edgecolor='grey', color=[[0.00,0.45,0.74]], rasterized=True)
-#         rects2 = ax.bar(x - width/5, x_2, width/5, label=r'$n=20$', edgecolor='grey', color=[(0.85,0.33,0.10)], rasterized=True)
-#         rects3 = ax.bar(x, x_3, width/5, label=r'$n=50$', edgecolor='grey', color=[(0.93,0.69,0.13)])
-#         rects4 = ax.bar(x + width/5, x_4, width/5, label=r'$n=100$', edgecolor='grey', color=[(0.49,0.18,0.56)],rasterized=True)
-#         rects5 = ax.bar(x + width/2.5, x_5, width/5, label=r'$n=1000$', edgecolor='grey', color= [(0.47,0.67,0.19)], rasterized=True)
-#         
-# =============================================================================
         # Add some text for labels, title and custom x-axis tick labels, etc.
         ax.set_ylabel('Relative amount of shear by each slip mode')
         ax.set_xlabel('Slip mode', size=12)
@@ -144,26 +117,3 @@ for n in range(0,1):
         name = 'slip_mode_full_90_'+str(ii)
         #plt.savefig(name+'.eps', format='eps')
         
-        #(0.86, 0.7612000000000001, 0.33999999999999997)]
-        
-        # =============================================================================
-        # set_n = []
-        # 
-        # dfs = pd.DataFrame(data={'mode': Y, 
-        #                          'n=20': [x_1[0], x_1[1], x_1[2]], 
-        #                          'n=50': [x_2[0], x_2[1], x_2[2]], 
-        #                          'n=1000': [x_3[0], x_3[1], x_3[2]]})
-        # dfs1 = pd.melt(dfs, id_vars = "mode")
-        # print(dfs1)
-        # 
-        # plt.figure(dpi=1200)
-        # ax = sns.catplot(x = 'mode', y='value', hue = 'variable',data=dfs1, kind='bar', palette='Set2',  rasterized=True)
-        # ax.set(xlabel='Slip mode', ylabel = 'Relative amount of shear by each slip mode')
-        # ax.legend(title="Yield Surface exponent");
-        # plt.savefig('MODE_activty.eps', format='eps')
-        # plt.show()
-        # 
-        # =============================================================================
-        
-        #plt.show()
-        #exit()
